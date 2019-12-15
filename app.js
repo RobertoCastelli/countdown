@@ -1,5 +1,4 @@
 function countdown() {
-    
     let today = new Date();
     let eventDate = new Date('december 18,2019 23:59:59');
 
@@ -21,21 +20,17 @@ function countdown() {
     min = (min < 10) ? "0" + min : min;
     sec = (sec < 10) ? "0" + sec : sec;
 
-    if (sec == 0 && min ==0 && hrs == 0 && days == 0 ) {
-        alert('https://to-naajeni.netlify.com/');
-        sec = 0
-        min = 0
-        hrs = 0
-        days = 0
-    } 
-        
+    if(days == 0 && hrs == 0 && min == 0 && sec == 0) {
+        alert('https://to-naajeni.netlify.com/')
+        clearInterval(timer)
+    }
 
     document.getElementById('days').innerHTML = days;
     document.getElementById('hours').innerHTML = hrs;
     document.getElementById('minutes').innerHTML = min;
     document.getElementById('seconds').innerHTML = sec;
 
-    setTimeout(countdown, 1000);
+    const timer = setTimeout(countdown, 1000);
 }
 
 countdown();
